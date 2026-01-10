@@ -1,12 +1,26 @@
+/* navbar + footer */
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('nav-placeholder').innerHTML = data;
+  });
+
+  fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+
+/*navbar minimize on scroll*/
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ){
-        document.getElementById("navbar").style.height = "120px";
-        document.getElementById("logo").style.height = "80px";
+        document.getElementById("main-navbar").style.height = "15vh";
+        document.querySelector(".logo img").style.height = "5vh";
 
     }else{
-        document.getElementById("navbar").style.height = "190px";
-        document.getElementById("logo").style.height = "100px";
+        document.getElementById("main-navbar").style.height = "20vh";
+        document.querySelector(".logo img").style.height = "7vh";
     }
 }
 
@@ -26,24 +40,3 @@ function sendsvar() {
         alert('Besked skal udfyldes');
     }
 }
-
-// Get the modal
-var modal = document.querySelector(".popUp");
-
-// Get the <span> element that closes the modal
-var btn = document.querySelector(".popUpX");
-
-console.log(modal)
-
-// When the user clicks on <span> (x), close the modal
-btn.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-

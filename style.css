@@ -12,29 +12,31 @@
     --smallpadding: 2vw;
     --gap: 1vw;
     --dropshadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
+    --border-radius: 15px
+}
+
+h1, 
+h2,
+h3 {
+    text-align: center;
+    font-weight: 700;
+    color: var(--white);
 }
 
 h1 {
     font-size: clamp(24px, 8vw, 64px);
-    font-weight: 700;
-    color: var(--black);
-    text-align: center;
     padding: 0 var(--sidepadding);
-    
+    color: var(--black);
 }
 
-h3 {
+h2 {
     font-size: clamp(20px, 5vw, 48px);
-    font-weight: 700;
-    color: var(--white);
-    text-align: center;
     margin: 0;
 }
 
-h4 {
+h3 {
     font-size: clamp(18px, 2vw, 36px);
     color: var(--white);
-    text-align: center;
     margin-bottom: 0;
 }
 
@@ -49,187 +51,22 @@ li {
     color: var(--white);
 }
 
-
-body {
-    background-image: url(fotos/bcgimg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Exo", sans-serif;
-}
-
-#luftBody {
-    background-image: url(fotos/luft-til\ luft\ \(3\).png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Exo", sans-serif;
-}
-
-#serviceBody {
-    background-image: url(fotos/Services\ \(3\).png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Exo", sans-serif;
-}
-
-#prisBody {
-    background-image: url(fotos/Priser\ \(3\).png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Exo", sans-serif;
-}
-
-#smalllink:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--darkorange);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 15px;
-}
-
-#smalllink:hover:first-line {
-    text-decoration-color: var(--darkorange);
-}
-
-/*pop up*/
-.popUp {
-    position: fixed;
-    top: 10%;
-    right: 10%;
-    left: 10%;
-    bottom: 20%;
-    background-color: var(--lightorange);
-    border-radius: 15px;
-    border: 5px solid #CA6F00;
-    z-index: 10;
-}
-
-.popUp h3,
-h4 {
-    color: var(--white);
-}
-
-.popUpHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--smallpadding);
-}
-
-.popUpX {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    box-shadow: none;
-
-}
-
-#popUpLogo {
-    width: 102px;
-    height: 57px;
-}
-
-.popUpText {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: var(--smallpadding);
-}
-
-
-/*header*/
-header {
-    height: 190px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    padding-left: var(--sidepadding);
-    padding-right: var(--toppadding);
-    background-color: var(--grey);
-    transition: 1s;
-    z-index: 5;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: center;
-    gap: var(--sidepadding);
-    height: 190px;
-
-}
-
-#logo {
-    height: 100px;
-    transition: 1s;
-}
-
 a {
     text-decoration: none;
 }
 
-a:hover {
+.small-link:hover {
     text-decoration: underline;
-    text-decoration-style: double;
-    text-decoration-color: var(--lightblue);
+    text-decoration-color: var(--darkorange);
     text-decoration-thickness: 3px;
-    text-underline-offset: 15px;
+    text-underline-offset: 20px;
 }
 
-a:hover:first-line {
-    text-decoration: underline;
-    text-decoration-color: var(--lightorange);
-    text-decoration-thickness: 3px;
+.small-link:hover:first-line {
+    text-decoration-color: var(--darkorange);
 }
 
-
-.dropdownMenu {
-    position: relative;
-    display: none;
-}
-
-
-.dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: var(--darkblue);
-    border-radius: 25px;
-    box-shadow: var(--dropshadow);
-    z-index: 1;
-    width: fit-content;
-}
-
-.dropdownContent a {
-    padding: 10px;
-    text-decoration: none;
-}
-
-
-.dropdownMenu:hover .dropdownContent {
-    display: block;
-    display: flex;
-    flex-direction: column;
-}
-
-/*end header*/
-/*Hero*/
-.hero{
-    background-image: url(fotos/hero.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 80vh;
-    margin-top: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-
+button,
 #button {
     text-decoration: none;
     background-color: var(--darkorange);
@@ -243,29 +80,144 @@ a:hover:first-line {
     box-shadow: var(--dropshadow);
     width: fit-content;
     transition: 1s;
+    border: none;
 }
 
-#button:hover,
+.button:hover,
 button:hover {
     background-color: var(--lightorange);
 }
 
-/*end Hero*/
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Exo", sans-serif;
+}
+
+#body-index { background-image: url(fotos/background-main.png); }
+#body-ydelser { background-image: url(fotos/background-ydelser.png); }
+#body-luft { background-image: url(fotos/background-luft-til-luft.png); }
+#body-pris { background-image: url(fotos/background-priser.png); }
+#body-om-mig { background-image: url(fotos/background-priser.png); }
+
+/*header*/
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 var(--toppadding) 0 var(--sidepadding);
+    background-color: var(--grey);
+    transition: height 1s;
+    z-index: 5;
+}
+
+#logo img {
+    height: 15vh;
+    transition: 1s;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: var(--sidepadding);
+    height: 20vh;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: var(--lightorange);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 15px;
+}
+
+.nav-link:hover:first-line {
+    text-decoration: underline;
+    text-decoration-color: var(--lightblue);
+    text-decoration-thickness: 3px;
+}
+
+#dropdown-menu {
+    display: none; 
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--darkblue);
+    border-radius: 25px;
+    box-shadow: var(--dropshadow);
+    z-index: 1;
+    width: fit-content;
+}
+
+.nav-dropdown-link {
+    padding: 10px 20px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-dropdown-link:hover {
+    background-color: var(--lightblue);
+}
+
+/*pop up*/
+.popup {
+    background-color: var(--white);
+    border: 5px solid var(--darkorange);
+    border-radius: 25px;
+    z-index: 10;
+}
+.popup p,
+.popup a {
+    color: var(--black);
+    text-align: center;
+}
+
+.popup-header {
+    display: flex;
+}
+
+/*Hero*/
+.hero{
+    background-image: url(fotos/desktop-hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 /*om mig*/
-#ommig,
-#ommigpage {
+.om-mig,
+.om-mig-page {
     padding: var(--toppadding) var(--sidepadding);
     display: flex;
     flex-direction: column;
     gap: var(--smallpadding);
 }
 
-#underommig {
+.under-om-mig {
     display: flex;
     gap: var(--smallpadding);
 }
 
-#pictureOmmig {
+.picture-om-mig {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -273,14 +225,12 @@ button:hover {
     gap: var(--smallpadding);
 }
 
-#pictureOmmig img {
-    border-radius: 15px;
+.picture-om-mig img {
+    border-radius: var(--border-radius);
 }
 
-/*end om mig*/
-
 /*ydelser*/
-.minYdelser {
+.mine-ydelser {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,7 +238,7 @@ button:hover {
     gap: var(--smallpadding);
 }
 
-#Ydelser {
+.ydelser {
     display: flex;
     justify-content: space-between;
     align-self: center;
@@ -296,31 +246,21 @@ button:hover {
     width: 100%;
 }
 
-.work {
+.ydelser-card {
     display: flex;
     flex-direction: column;
     background-color: var(--grey);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     box-shadow: var(--dropshadow);
     width: 30%;
 }
 
-.work:hover {
-    scale: 1.05;
-    transition: 0.5s;
-}
-.work:not(:hover) {
-    scale: 1;
-    transition: 0.5s;
-}
-
-
-.workPictures {
+.ydelser-pictures {
     height: auto;
     border-radius: 15px;
 }
 
-.textWork {
+.ydelser-text {
     display: flex;
     padding: 20px;
     padding-top: 0px;
@@ -330,20 +270,30 @@ button:hover {
     gap: var(--gap);
 }
 
+.ydelser-card:hover {
+    scale: 1.04;
+    transition: 0.5s;
+}
+.ydelser-card:not(:hover) {
+    scale: 1;
+    transition: 0.5s;
+}
+
 span {
     color: var(--lightorange);
 }
 
-.servicecards {
+.service-cards {
     display: flex;
     gap: var(--smallpadding);
     align-items: center;
 }
 
-#workimage {
+#work-image {
     box-shadow: var(--dropshadow);
     width: 50%;
     height: auto;
+    border-radius: var(--border-radius);
 }
 
 /*luftpumpe*/
@@ -354,34 +304,35 @@ span {
     gap: var(--smallpadding);
 }
 
-#luftpumpepage {
+#luftpumpe-page {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .luftpumpe,
-#luftpumpepage,
+#luftpumpe-page,
 .anmeldesler {
     padding: var(--toppadding) var(--sidepadding) 0 var(--sidepadding);
 }
 
-.luftpumpecontent {
+.luftpumpe-content {
     display: flex;
     gap: var(--smallpadding);
     align-items: center;
 }
 
-#luftpummpetext,
-#luftpumpeimg {
+#luftpummpe-text,
+#luftpumpe-img {
     width: 50%;
 }
 
-#luftpumpeimg image {
+#luftpumpe-img img {
     box-shadow: var(--dropshadow);
+    width: 50%;
 }
 
-#luftpumpemain {
+#luftpumpe-main {
     text-align: center;
 }
 
@@ -401,7 +352,7 @@ span {
 .anmeldcard,
 .anmeldcardno {
     background-color: var(--grey);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     padding: var(--gap);
     box-shadow: var(--dropshadow);
    
@@ -446,21 +397,6 @@ span {
     text-align: center;
 }
 
-#navn {
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-
-#tlf {
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-#email {
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
 #besked {
     grid-column: 2/3;
     grid-row: 1/4;
@@ -471,26 +407,10 @@ input,
 textarea {
     background-color: var(--white);
     color: var(--black);
-    border-radius: 15px;
+    border-radius: 25px;
     padding: var(--smallpadding);
     border: 2px solid var(--black);
     box-shadow: var(--dropshadow);
-}
-
-button {
-    text-decoration: none;
-    background-color: var(--darkorange);
-    color: var(--white);
-    display: flex;
-    padding: 15px 7vw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    box-shadow: var(--dropshadow);
-    width: fit-content;
-    transition: 1s;
-    border: none;
 }
 
 /*kalender*/
@@ -500,7 +420,7 @@ button {
     align-items: center;
     text-align: center;
     gap: var(--smallpadding);
-    background-image: url(fotos/background\ img.png);
+    background-image: url(fotos/kontakt-wires.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -519,7 +439,7 @@ button {
     gap: var(--smallpadding);
     flex: 1 0 0;
     background-color: #232D31;
-    border-radius: 15px;
+    border-radius: var(--border-radius);
 }
 
 #month img {
@@ -535,7 +455,7 @@ button {
     width: 90%;
 }
 
-#month h4 {
+#month h3 {
     margin: 0;
 }
 
@@ -559,7 +479,7 @@ button {
 
 .calendargrid div {
     background-color: var(--grey);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     width: 17%;
     height: 10vw;
 }
@@ -586,7 +506,7 @@ button {
 
 /*andre sider */
 #myservicespage,
-#luftpumpepage,
+#luftpumpe-page,
 #ommigpage,
 .minepriserpage,
 .kontaktsectionpage {
@@ -644,34 +564,61 @@ button {
 
 #round {
     border: 1px solid #FFF7ED;
-    border-radius: 15px 15px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     width: 75%;
     text-align: center;
 }
 
 #corners {
     border: 1px solid #FFF7ED;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
     width: 75%;
     text-align: center;
 }
 
+@media screen and (max-width: 1024px) {
+    .hero {
+        background-image: url(fotos/ipad-hero.png);
+    }
+
+    .ydelser {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .ydelser-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #month img {
+        width: 19.871px;
+        height: 30.076px;
+    }
+
+    .mine-ydelser {
+        align-items: center;
+        gap: var(--smallpadding);
+    }
+}
+
 @media screen and (max-width: 770px) {
 
-    .navbar {
+    #navbar {
         display: none;
     }
 
-    .dropdownMenu {
+    #dropdown-menu {
         display: block;
     }
 
     .hero {
-        background-image: url(fotos/hero...png);
+        background-image: url(fotos/mobile-hero.png);
     }
 
-    #underommig,
-    .luftpumpecontent {
+    #under-om-mig,
+    .luftpumpec-ontent {
         flex-direction: column;
         align-items: center;
     }
@@ -680,10 +627,10 @@ button {
         flex-direction: column;
     }
 
-    #luftpummpetext,
-    #luftpumpeimg,
-    #pictureOmmig,
-    #workimage {
+    #luftpummpe-text,
+    #luftpumpe-img,
+    #picture-om-mig,
+    #work-image {
         width: 100%;
     }
 
@@ -704,21 +651,6 @@ button {
         column-gap: var(--smallpadding);
         row-gap: var(--smallpadding);
         width: 100%;
-    }
-
-    #navn {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
-    #tlf {
-        grid-column: 1/2;
-        grid-row: 2/3;
-    }
-
-    #email {
-        grid-column: 1/2;
-        grid-row: 3/4;
     }
 
     #besked {
@@ -756,33 +688,5 @@ button {
     .calendargrid div,
     .dropdownContent {
         border-radius: 5px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .hero {
-        background-image: url(fotos/heroipad.png);
-    }
-
-    #Ydelser {
-        flex-direction: column;
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .work {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    #month img {
-        width: 19.871px;
-        height: 30.076px;
-    }
-
-    .minYdelser {
-        display: flex;
-        align-items: center;
-        gap: var(--smallpadding);
     }
 }
