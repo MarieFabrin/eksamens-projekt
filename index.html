@@ -12,19 +12,11 @@
 </head>
 
 <body id="body-index">
-    <div id="nav-placeholder"></div>
-
     <!--Pop Up section -->
     <section class="popup">
-        <a id="button" href="kontakt.html">Kontakt mig</a>
-        <a id="button" href="kontakt.html">Kontakt mig</a>
-        <a id="button" href="kontakt.html">Kontakt mig</a>
-        <a id="button" href="kontakt.html">Kontakt mig</a>
-        <a id="button" href="kontakt.html">Kontakt mig</a>
-
         <div class="popup-header">
             <img id="white-logo" src="fotos/white-logo.png" alt="logo">
-            <button class="popup-close"><img src="fotos/close-btn.png" alt="Luk"></button>
+            <button class="popup-close-btn" id="btn" onclick="lukPopup()"><img src="fotos/close-btn.png" alt="Luk"></button>
         </div>
         <div>
             <div>
@@ -33,28 +25,27 @@
             </div>
             <p>Kontakt mig inden 31. januar og lave en aftale for et indløse rabbaten</p>
         </div>
-        <a id="button" href="kontakt.html">Kontakt mig</a>
+        <a class="button" href="kontakt.html">Kontakt mig</a>
         <div>
             <p>eller</p>
-            <a class="small-link" href="priser.html"> > Læs mere om tilbuddet her </a>
+            <a class="small-link" href="priser.html">> Læs mere om tilbuddet her </a>
         </div>
     </section>
 
+    <div id="nav-placeholder"></div>
+
     <!--Hero section -->
-    <section class="hero">
+    <section id="page-top" class="hero">
         <h1>Velkommen til Din lokale El-Mand</h1>
-        <a id="button" href="kontakt.html">Kontakt mig</a>
+        <a class="button" href="kontakt.html">Kontakt mig</a>
     </section>
 
     <!--Om mig section -->
     <section class="om-mig">
         <h2>Din lokale elektriker i Sønderborg</h2>
         <section class="under-om-mig">
-            <article class="picture-om-mig">
-                <img src="fotos/martin-møller.png" alt="MartinMøller">
-                <img src="fotos/sønderborg.png" alt="sønderborg">
-            </article>
-            <article>
+            <img class="om-mig-1" src="fotos/martin-møller.png" alt="Martin">
+            <article class="om-mig-text">
                 <p><strong>Hej, jeg hedder Martin Møller - og jeg er din lokale elektriker i Sønderborg og
                         omegn</strong> <br><br> Står du og mangler en elektriker i Sønderborg og omegn, så står jeg -
                     Martin Møller - altid klar til at hjælpe. <br><br>Jeg læste EUX Elektriker-uddannelsen på EUC Syd,
@@ -63,8 +54,9 @@
                     el-projekter - både for private kunder, erhverslivet og industri områder i Sønderborg og omegn. <br>
                     Jeg står altid klar til at hører om dine ønsker så vi sammen finder den bedste løsning dig. <br><br>
                 </p>
-                <a class="small-link" href="ommig.html"> > Læs mere om mig</a>
+                <a class="small-link" href="ommig.html">> Læs mere om mig</a>
             </article>
+            <img class="om-mig-2" src="fotos/sønderborg.png" alt="Sønderborg">
         </section>
     </section>
 
@@ -97,7 +89,7 @@
                 </article>
             </article>
         </section>
-        <a id="button" href="ydesler.html">Læs mere her</a>
+        <a class="button" href="ydesler.html"> Læs mere om mine ydelser her</a>
     </section>
 
     <!--Luft-til-luft varmepumpe section -->
@@ -106,12 +98,13 @@
 
         <article class="luftpumpe-content">
             <img id="luftpumpe-img" src="fotos/luftpumpe.png" alt="Luftpumpe">
-            <p id="luftpummpe-text">Hvad er en luft til luft-varmepumpe? <br>En luft til luft-varmepumpe kan bruges til
-                at varme ét eller flere rum op i din helårsbolig eller til at sørge for varmen i dit sommerhus. <br>Luft
-                til luft-varmepumper trækker varmen ud af luften udenfor huset, opvarmer luften og blæser den ind i
-                huset. Den bruger altså varmeenergien fra luften udenfor til at opvarme luften inde i huset.</p>
+            <p class="luftpumpe-text">Vil du gøre noget godt for klimaet? Har du et gammelt varmesystem og vil gerne
+                skifte til et mere energieffektivt alternativ? Så er en luft- til luft varmepumpe måske noget for dig.
+                <br>En luft-til-luft varmepumpe er en energieffektiv og mere klimavenlig måde at opvarme dit hjem på.
+                <br>En luft til luft-varmepumpe kan bruges til at varme ét eller flere rum op i din helårsbolig eller
+                til at sørge for varmen i dit sommerhus.</p>
         </article>
-        <a id="button" href="luft.html">Kontakt mig</a>
+        <a class="button" href="luft.html">Kontakt mig</a>
     </section>
 
     <!--Anmeldelser section -->

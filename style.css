@@ -49,6 +49,7 @@ li {
     font-size: clamp(16px, 2vw, 36px);
     font-weight: 500;
     color: var(--white);
+    margin: 0;
 }
 
 a {
@@ -67,7 +68,7 @@ a {
 }
 
 button,
-#button {
+.button {
     text-decoration: none;
     background-color: var(--darkorange);
     color: var(--white);
@@ -88,6 +89,13 @@ button:hover {
     background-color: var(--lightorange);
 }
 
+#btn {
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
 body {
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,10 +107,34 @@ body {
 #body-luft { background-image: url(fotos/background-luft-til-luft.png); }
 #body-pris { background-image: url(fotos/background-priser.png); }
 #body-om-mig { background-image: url(fotos/background-priser.png); }
+#body-kontakt { margin: 0;}
+
+/* padding */
+.hero,
+.om-mig,
+.mine-ydelser,
+.luftpumpe,
+.anmeldesler,
+.kontaktsection,
+.ydelser-page,
+.ydelser-page-text,
+.fokusområde,
+.mine-priser,
+.om-mig-page,
+.kontaktsectionpage,
+.calendarpadding {
+    padding: var(--toppadding) var(--sidepadding) 0 var(--sidepadding);
+    gap: var(--sidepadding);
+}
+
+#page-top {
+    margin-top: 14vh;
+}
 
 /*header*/
 header {
     height: 20vh;
+    padding: 0 var(--toppadding) 0 var(--sidepadding);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,7 +142,6 @@ header {
     left: 0;
     right: 0;
     top: 0;
-    padding: 0 var(--toppadding) 0 var(--sidepadding);
     background-color: var(--grey);
     transition: height 1s;
     z-index: 5;
@@ -155,16 +186,10 @@ header {
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: var(--darkblue);
-    border-radius: 25px;
-    box-shadow: var(--dropshadow);
-    z-index: 1;
-    width: fit-content;
 }
 
 .nav-dropdown-link {
-    padding: 10px 20px;
+    padding: var(--gap) var(--smallpadding);
     color: var(--white);
     text-decoration: none;
 }
@@ -175,11 +200,23 @@ header {
 
 /*pop up*/
 .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 24%;
+    top: 10%;
     background-color: var(--white);
     border: 5px solid var(--darkorange);
     border-radius: 25px;
-    z-index: 10;
+    z-index: 100;
+    width: 50%;
+    padding: var(--smallpadding);
+    gap: 30px;
 }
+
+.popup h2,
+.popup h3,
 .popup p,
 .popup a {
     color: var(--black);
@@ -187,16 +224,31 @@ header {
 }
 
 .popup-header {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/*Hero*/
+.popup-close-btn {
+    width: 50px;
+    height: 50px;
+}
+
+.popup-close-btn img {
+    width: 100%;
+}
+
+#white-logo {
+    height: 15vh;
+}
+
+/*hero*/
 .hero{
     background-image: url(fotos/desktop-hero.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 80vh;
-    margin-top: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,27 +258,37 @@ header {
 /*om mig*/
 .om-mig,
 .om-mig-page {
-    padding: var(--toppadding) var(--sidepadding);
     display: flex;
     flex-direction: column;
-    gap: var(--smallpadding);
 }
 
 .under-om-mig {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--smallpadding);
+    grid-template-rows: 1fr 1fr;
+}
+.om-mig-text {
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+.om-mig-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.om-mig-2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
 }
 
-.picture-om-mig {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 50%;
-    gap: var(--smallpadding);
-}
-
-.picture-om-mig img {
+.om-mig-1,
+.om-mig-2 {
     border-radius: var(--border-radius);
+    box-shadow: var(--dropshadow);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;    
 }
 
 /*ydelser*/
@@ -234,16 +296,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 var(--sidepadding);
-    gap: var(--smallpadding);
 }
 
 .ydelser {
     display: flex;
     justify-content: space-between;
     align-self: center;
-    gap: var(--smallpadding);
     width: 100%;
+    gap: var(--sidepadding);
 }
 
 .ydelser-card {
@@ -262,12 +322,15 @@ header {
 
 .ydelser-text {
     display: flex;
-    padding: 20px;
-    padding-top: 0px;
+    padding: var(--smallpadding);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--gap);
+}
+
+.ydelser-text p {
+    margin: 0;
 }
 
 .ydelser-card:hover {
@@ -301,19 +364,12 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--smallpadding);
 }
 
-#luftpumpe-page {
+.luftpumpe-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.luftpumpe,
-#luftpumpe-page,
-.anmeldesler {
-    padding: var(--toppadding) var(--sidepadding) 0 var(--sidepadding);
 }
 
 .luftpumpe-content {
@@ -322,9 +378,13 @@ span {
     align-items: center;
 }
 
-#luftpummpe-text,
+.luftpumpe-text,
 #luftpumpe-img {
     width: 50%;
+}
+
+#luftpumpe-text {
+    text-align: start;
 }
 
 #luftpumpe-img img {
@@ -341,21 +401,28 @@ span {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: var(--smallpadding);
 }
 
 .anmeldcards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--smallpadding);
+    align-items: stretch;
 }
 
 .anmeldcard,
 .anmeldcardno {
     background-color: var(--grey);
     border-radius: var(--border-radius);
-    padding: var(--gap);
     box-shadow: var(--dropshadow);
-   
+    padding: var(--smallpadding);
+    gap: var(--smallpadding);
+}
+
+.anmeldcard p,
+.anmeldcardno p {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #arrow {
@@ -390,8 +457,6 @@ span {
 
 .kontaktsection {
     display: flex;
-    padding: var(--toppadding) var(--sidepadding);
-    gap: var(--smallpadding);
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -419,14 +484,12 @@ textarea {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: var(--smallpadding);
     background-image: url(fotos/kontakt-wires.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .calendarpadding {
-    padding: var(--toppadding) var(--sidepadding);
     background-image: linear-gradient(to bottom, #132024, #1C262A);
 }
 
@@ -487,11 +550,11 @@ textarea {
 /*footer*/
 .footer {
     display: flex;
-    padding: var(--smallpadding) var(--sidepadding);
     justify-content: space-between;
     align-items: center;
     text-align: center;
     background-color: var(--black);
+    padding: var(--toppadding) var(--sidepadding);
 }
 
 .footerimg {
@@ -505,50 +568,25 @@ textarea {
 }
 
 /*andre sider */
-#myservicespage,
-#luftpumpe-page,
-#ommigpage,
-.minepriserpage,
-.kontaktsectionpage {
-    margin-top: 190px;
-    padding: var(--toppadding) var(--sidepadding);
-}
-
-.servicegap {
+.ydelser-page-text {
     display: flex;
     flex-direction: column;
-    gap: var(--smallpadding);
-    padding: var(--smallpadding) 0;
-}
-
-#myservicespage {
-    display: flex;
-    flex-direction: column;
-    gap: var(--smallpadding);
 }
 
 .fokusområde,
-#minePriser {
+.mine-priser {
     display: flex;
     flex-direction: column;
-    gap: var(--smallpadding);
-    padding: var(--smallpadding) 0;
-    align-items: center;
-    justify-content: center;
-
-}
-
-/*pris*/
-#minePriser2 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--smallpadding);
-    padding: var(--sidepadding) 0 var(--smallpadding) 0;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
+.priser-table {
+    padding: var(--smallpadding);
+}
+
+/*pris*/
 #prispakker {
     display: flex;
     flex-direction: column;
@@ -556,29 +594,38 @@ textarea {
     align-items: center;
 }
 
-.pakker {
+.pakker,
+#round,
+#corners {
     border: 1px solid #FFF7ED;
-    width: 75%;
+    width: 100%;
     text-align: center;
 }
 
 #round {
-    border: 1px solid #FFF7ED;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
-    width: 75%;
-    text-align: center;
 }
-
 #corners {
-    border: 1px solid #FFF7ED;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    width: 75%;
-    text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
     .hero {
         background-image: url(fotos/ipad-hero.png);
+    }
+
+    .popup {
+        left: 12%;
+        width: 75%;
+    }
+
+    .popup-close-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    #white-logo {
+        height: 10vh;
     }
 
     .ydelser {
@@ -603,7 +650,15 @@ textarea {
     }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 780px) {
+    #page-top {
+        margin-top: 20vh;
+    }
+    .om-mig-page,
+    .ydelser-page,
+    #luftpumpe-page {
+        flex-direction: column;
+    }
 
     #navbar {
         display: none;
@@ -616,28 +671,53 @@ textarea {
     .hero {
         background-image: url(fotos/mobile-hero.png);
     }
-
-    #under-om-mig,
-    .luftpumpec-ontent {
-        flex-direction: column;
-        align-items: center;
+    
+    .under-om-mig {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .om-mig-text {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .om-mig-1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .om-mig-2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
     }
 
-    .servicecards {
+    .om-mig-1,
+    .om-mig-2 {
+        height: 200px;
+        width: 100%;
+        display: block;
+    }
+    .om-mig-1 {
+        height: 350px;
+    }
+    
+
+    .luftpumpe-content {
         flex-direction: column;
     }
 
-    #luftpummpe-text,
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .luftpumpe-text,
     #luftpumpe-img,
-    #picture-om-mig,
+    .picture-om-mig,
     #work-image {
         width: 100%;
     }
 
     .footer {
         flex-direction: column;
-        gap: var(--smallpadding);
-        padding: var(--sidepadding) 0;
     }
 
     .some img {
@@ -675,6 +755,10 @@ textarea {
         display: none;
     }
 
+    .anmeldcards {
+        display: flex;
+    }
+
     .anmeldcard {
         align-items: center;
         width: 75%;
@@ -684,9 +768,18 @@ textarea {
     .calendargrid p {
         font-size: 8px;
     }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--grey);
+        border-radius: var(--border-radius);
+        box-shadow: var(--dropshadow);
+        z-index: 1;
+        width: 15vw;
+    }
 
     .calendargrid div,
-    .dropdownContent {
+    .dropdown-content {
         border-radius: 5px;
     }
 }

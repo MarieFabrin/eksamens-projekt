@@ -10,26 +10,48 @@ fetch('navbar.html')
   .then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;
   });
+  
 
 /*navbar minimize on scroll*/
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
+    var logo = document.querySelector("#logo img")
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ){
         document.getElementById("main-navbar").style.height = "15vh";
-        document.querySelector(".logo img").style.height = "5vh";
+        logo.style.height = "12vh";
 
     }else{
         document.getElementById("main-navbar").style.height = "20vh";
-        document.querySelector(".logo img").style.height = "7vh";
+        logo.style.height = "15vh";
     }
+}
+
+/* pop up */
+function lukPopup() {
+    document.querySelector(".popup").style.display = "none";
+}
+
+/* dropdown menu */
+var menuOpen = false;
+function openMenu(){
+    if (menuOpen) {
+        var displayMode = "none";
+        menuOpen = false;
+    }
+    else {
+        var displayMode = "block";
+        menuOpen = true;
+    }
+    document.querySelector(".dropdown-content").style.display = displayMode;
+
 }
 
 /* validate kontakt felt */
 function sendsvar() {
-    const navn = document.getElementById('navn').value;
-    const tlf = document.getElementById('tlf').value;
-    const email = document.getElementById('email').value;
-    const besked = document.getElementById('besked').value;
+    var navn = document.getElementById('navn').value;
+    var tlf = document.getElementById('tlf').value;
+    var email = document.getElementById('email').value;
+    var besked = document.getElementById('besked').value;
     if (navn == '') {
         alert('Navn skal udfyldes');
     }
