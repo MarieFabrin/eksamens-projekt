@@ -116,7 +116,6 @@ body {
 .luftpumpe,
 .anmeldesler,
 .kontaktsection,
-.ydelser-page,
 .ydelser-page-text,
 .fokusområde,
 .mine-priser,
@@ -126,6 +125,11 @@ body {
     padding: var(--toppadding) var(--sidepadding) 0 var(--sidepadding);
     gap: var(--sidepadding);
 }
+
+.ydelser-page {
+    padding: var(--toppadding) 0 0;
+}
+
 
 #page-top {
     margin-top: 14vh;
@@ -555,6 +559,10 @@ textarea {
     text-align: center;
     background-color: var(--black);
     padding: var(--toppadding) var(--sidepadding);
+}
+
+.footer p {
+    margin-bottom: 40px;
 }
 
 .footerimg {
